@@ -23,3 +23,9 @@ jobs:
       - name: Say Hi
         run: |
           echo Hello World!
+
+      - name: Now
+        run: date
+
+      - name: Directory
+        run: ls -l
