@@ -8,6 +8,7 @@ on:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v2
 
@@ -34,3 +35,11 @@ jobs:
           command: npm run test:e2e
           wait-on: http://localhost:5000
           spec: cypress/integration/*.js
+
+      - name: deploy
+      - uses: akhileshns/heroku-deploy@v3.10.9
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "fullstackopencicd"
+          heroku_email: "saleh-rz@outlook.com"
+          remote_branch: master
