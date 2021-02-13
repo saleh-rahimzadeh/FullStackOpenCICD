@@ -14,6 +14,10 @@ app.get('/version', (req, res) => {
   res.send('2')
 })
 
+app.get('/saleh', (req, res) => {
+	res.send('Hi Saleh')
+})
+
 app.listen(PORT, () => {
   /* eslint-disable no-console */
   console.log('server started on port 5000')
