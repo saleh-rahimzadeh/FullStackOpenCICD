@@ -11,7 +11,7 @@ on:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && github.event.commits.*.message != '#skip' }}
 
     steps:
       - uses: actions/checkout@v2
@@ -53,14 +53,14 @@ jobs:
 
   versioning:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && github.event.commits.*.message != '#skip' }}
 
     steps:
 
     - uses: actions/checkout@v2
 
     - name: Bump version and push tag
-      uses: anothrNick/github-tag-action@1.33.0
+      uses: anothrNick/github-tag-action@eca2b69f9e2c24be7decccd0f15fdb1ea5906598
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         WITH_V: true
