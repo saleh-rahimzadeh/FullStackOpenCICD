@@ -43,3 +43,5 @@ jobs:
           heroku_app_name: "fullstackopencicd"
           heroku_email: "saleh-rz@outlook.com"
           remote_branch: master
+          healthcheck: "https://fullstackopencicd.herokuapp.com/health"
+          checkstring: "ok"
