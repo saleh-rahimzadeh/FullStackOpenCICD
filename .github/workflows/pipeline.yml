@@ -45,3 +45,4 @@ jobs:
           remote_branch: master
           healthcheck: "https://fullstackopencicd.herokuapp.com/health"
           checkstring: "ok"
+          rollbackonhealthcheckfailed: true
