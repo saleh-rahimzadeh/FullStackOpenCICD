@@ -51,7 +51,6 @@ jobs:
           checkstring: "ok"
           rollbackonhealthcheckfailed: true
 
-jobs:
   versioning:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'push' }}
